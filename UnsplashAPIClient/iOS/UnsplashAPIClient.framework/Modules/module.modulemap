@@ -1,0 +1,4 @@
+framework module UnsplashAPIClient {
+  header "UnsplashAPIClient-Swift.h"
+  requires objc
+}
