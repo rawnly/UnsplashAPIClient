@@ -57,7 +57,7 @@ public class UnsplashAPIClient {
      
      - Returns: Void
      */
-    init(accessKey client_id:String, secretKey client_secret:String, redirect_uri: URL? = nil, bearerToken:String? = nil) {
+    public init(accessKey client_id:String, secretKey client_secret:String, redirect_uri: URL? = nil, bearerToken:String? = nil) {
         self.client_id = client_id
         self.client_secret = client_secret
         
@@ -858,7 +858,7 @@ extension UnsplashAPIClient {
              - orientation: Filter search results by photo orientation. Valid values are landscape, portrait, and squarish
              - featured: Limit selection to featured photos
          */
-        init(
+        public init(
             collections:[String]?=nil,
             featured:Bool?=nil,
             user:String?=nil,
@@ -884,7 +884,7 @@ extension UnsplashAPIClient {
              - orientation: Filter search results by photo orientation. Valid values are landscape, portrait, and squarish
              - featured: Limit selection to featured photos
          */
-        init(
+        public init(
             collections:String?=nil,
             featured:Bool?=nil,
             user:String?=nil,

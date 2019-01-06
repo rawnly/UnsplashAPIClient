@@ -185,7 +185,7 @@ public struct Unsplash {
         public struct Tag:Decodable {
             let title: String
             
-            init(title: String) {
+            public init(title: String) {
                 self.title = title
             }
         }
