@@ -69,13 +69,19 @@ extension ViewController {
 }
 ```
 
-## Installation via **Carthage**
+### ⚠️Note
+Since the latest release is flagged as `pre-release` it's not production-ready.
+Please report any bug/issue.
 
+## Installation via **Carthage**
 UnsplashAPIClient is available through Carthage. To install just write into your `Cartfile`:
 ```
   github "rawnly/UnsplashAPIClient"
 ```
 You also need to add `UnsplashAPIClient.framework` in your copy-frameworks script.
+
+## Installation via **Pods**
+> Coming Soon
 
 ## Related
 - [**Splash CLI**](https://github.com/splasg-cli/splash-cli) - Beautiful wallpapers from Unsplash
