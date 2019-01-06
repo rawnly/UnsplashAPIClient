@@ -2,47 +2,47 @@ import Foundation
 
 public struct Unsplash {
     public struct URLResponse: Decodable {
-        let url: URL?
+        public let url: URL?
     }
 
     
     public struct Stats: Decodable {
-        let photos: Int
-        let downloads: Int
-        let views: Int
-        let likes: Int
-        let photographers: Int
-        let pixels: Int
-        let downloads_per_second: Int
-        let views_per_second: Int
-        let developers: Int
-        let applications: Int
-        let requests: Int
+        public let photos: Int
+        public let downloads: Int
+        public let views: Int
+        public let likes: Int
+        public let photographers: Int
+        public let pixels: Int
+        public let downloads_per_second: Int
+        public let views_per_second: Int
+        public let developers: Int
+        public let applications: Int
+        public let requests: Int
     }
     
     public struct StatsResponse: Decodable {
         struct Detail: Decodable {
             struct Historical: Decodable {
                 struct Value: Decodable {
-                    let date: String
-                    let value: Int
+                    public let date: String
+                    public let value: Int
                 }
                 
-                let change: Int
-                let average: Int
-                let resolution: String
-                let quantity: Int
-                let values: [Value]
+                public let change: Int
+                public let average: Int
+                public let resolution: String
+                public let quantity: Int
+                public let values: [Value]
             }
             
-            let total: Int
-            let historical: Historical
+            public let total: Int
+            public let historical: Historical
         }
         
-        let username: String
-        let downloads: Detail
-        let views: Detail
-        let likes: Detail
+        public let username: String
+        public let downloads: Detail
+        public let views: Detail
+        public let likes: Detail
     }
 
     public struct Photo:Decodable {
@@ -54,64 +54,64 @@ public struct Unsplash {
         }
         
         public struct Exif:Decodable {
-            let make: String?
-            let model: String?
-            let exposure_time: String?
-            let aperture: String?
-            let focal_length: String?
-            let iso: Int?
+            public let make: String?
+            public let model: String?
+            public let exposure_time: String?
+            public let aperture: String?
+            public let focal_length: String?
+            public let iso: Int?
         }
         
         public struct URLS: Decodable {
-            let raw: URL
-            let full: URL
-            let regular: URL
-            let small: URL
-            let thumb: URL
+            public let raw: URL
+            public let full: URL
+            public let regular: URL
+            public let small: URL
+            public let thumb: URL
         }
         
         
         public struct Location: Decodable {
             public struct Coords: Decodable {
-                let latitude: Double?
-                let longitude: Double?
+                public let latitude: Double?
+                public let longitude: Double?
             }
             
-            let city: String?
-            let country: String?
-            let position: Coords
+            public let city: String?
+            public let country: String?
+            public let position: Coords
         }
         
         public struct Links:Decodable {
-            let `self`:String
-            let html:String
-            let download:String
-            let download_location:String
+            public let `self`:String
+            public let html:String
+            public let download:String
+            public let download_location:String
         }
         
-        let id:String
-        let created_at: String
-        let updated_at: String
-        let width: Double
-        let height: Double
-        let color: String
-        let likes: Int
-        let liked_by_user: Bool
-        let description: String?
-        let categories: [String]
-        let slug: String?
+        public let id:String
+        public let created_at: String
+        public let updated_at: String
+        public let width: Double
+        public let height: Double
+        public let color: String
+        public let likes: Int
+        public let liked_by_user: Bool
+        public let description: String?
+        public let categories: [String]
+        public let slug: String?
         
         
-        let links: Links
-        let urls: URLS
-        let user: User
-        let exif: Exif?
+        public let links: Links
+        public let urls: URLS
+        public let user: User
+        public let exif: Exif?
         
-        let views: Int?
-        let downloads: Int?
+        public let views: Int?
+        public let downloads: Int?
         
         public func getURL(ofSize size: PictureSize = .regular) -> URL {
-            let urls = self.urls
+            public let urls = self.urls
             
             switch size {
             case .thumb:
@@ -129,82 +129,82 @@ public struct Unsplash {
     
     public struct User:Decodable {
         struct Links:Decodable {
-            let `self`:    URL
-            let html:      URL
-            let photos:    URL
-            let likes:     URL
-            let portfolio: URL
-            let following: URL
-            let followers: URL
+            public let `self`:    URL
+            public let html:      URL
+            public let photos:    URL
+            public let likes:     URL
+            public let portfolio: URL
+            public let following: URL
+            public let followers: URL
         }
         
         public struct ProfilePicure: Decodable {
-            let small: String
-            let medium:String
-            let large: String
+            public let small: String
+            public let medium:String
+            public let large: String
         }
                         
-        let id: String
-        let username: String
-        let name: String?
-        let first_name:String?
-        let last_name:String?
-        let twitter_username:String?
-        let instagram_username:String?
-        let portfolio_url: URL?
-        let bio: String?
-        let location: String?
-        let total_likes: Int
-        let total_photos: Int
-        let total_collections: Int
-        let accepted_tos: Bool?
+        public let id: String
+        public let username: String
+        public let name: String?
+        public let first_name:String?
+        public let last_name:String?
+        public let twitter_username:String?
+        public let instagram_username:String?
+        public let portfolio_url: URL?
+        public let bio: String?
+        public let location: String?
+        public let total_likes: Int
+        public let total_photos: Int
+        public let total_collections: Int
+        public let accepted_tos: Bool?
         
-        let links: Links
+        public let links: Links
     }
     
     public struct Collection:Decodable {
         public struct PreviewPhoto: Decodable {
-            let id: String
-            let urls: Photo.URLS
+            public let id: String
+            public let urls: Photo.URLS
         }
         
         public struct Meta:Decodable {
-            let title:String?
-            let description:String?
-            let index: Int?
-            let canonical:Bool?
+            public let title:String?
+            public let description:String?
+            public let index: Int?
+            public let canonical:Bool?
         }
         
         public struct Links: Decodable {
-            let `self`:  URL
-            let html:    URL
-            let photos:  URL
-            let related: URL
+            public let `self`:  URL
+            public let html:    URL
+            public let photos:  URL
+            public let related: URL
         }
         
         public struct Tag:Decodable {
-            let title: String
+            public let title: String
             
             public init(title: String) {
                 self.title = title
             }
         }
         
-        let id:Int
-        let title:String
-        let description:String?
-        let published_at:String
-        let updated_at:String
-        let curated:Bool
-        let featured:Bool
-        let total_photos:Int
-        let `private`:Bool
-        let share_key:String?
+        public let id:Int
+        public let title:String
+        public let description:String?
+        public let published_at:String
+        public let updated_at:String
+        public let curated:Bool
+        public let featured:Bool
+        public let total_photos:Int
+        public let `private`:Bool
+        public let share_key:String?
         
         
-        let links: Links?
-        let cover_photo: Photo?
-        let tags: [Tag]?
+        public let links: Links?
+        public let cover_photo: Photo?
+        public let tags: [Tag]?
     }
 }
 
