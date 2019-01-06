@@ -21,9 +21,9 @@ public struct Unsplash {
     }
     
     public struct StatsResponse: Decodable {
-        struct Detail: Decodable {
-            struct Historical: Decodable {
-                struct Value: Decodable {
+        public struct Detail: Decodable {
+            public struct Historical: Decodable {
+                public struct Value: Decodable {
                     public let date: String
                     public let value: Int
                 }
@@ -111,7 +111,7 @@ public struct Unsplash {
         public let downloads: Int?
         
         public func getURL(ofSize size: PictureSize = .regular) -> URL {
-            public let urls = self.urls
+            let urls = self.urls
             
             switch size {
             case .thumb:
@@ -128,7 +128,7 @@ public struct Unsplash {
     
     
     public struct User:Decodable {
-        struct Links:Decodable {
+        public struct Links:Decodable {
             public let `self`:    URL
             public let html:      URL
             public let photos:    URL
